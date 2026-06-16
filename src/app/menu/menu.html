@@ -1,1 +1,79 @@
-<p>menu works!</p>
+<h1>Ruins Cafe Menu</h1>
+
+<h2>Breakfast</h2>
+<div class="shop-grid">
+  @for (item of cartService.breakfastItems(); track item.id) {
+    <div class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>₱{{ item.price }}</p>
+      <button (click)="cartService.addToCart(item)">
+        Add to Cart
+      </button>
+    </div>
+  }
+</div>
+
+<h2>Coffee</h2>
+<div class="shop-grid">
+  @for (item of cartService.coffeeItems(); track item.id) {
+    <div class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>₱{{ item.price }}</p>
+      <button (click)="cartService.addToCart(item)">
+        Add to Cart
+      </button>
+    </div>
+  }
+</div>
+
+<h2>Cold Coffee</h2>
+<div class="shop-grid">
+  @for (item of cartService.coldCoffeeItems(); track item.id) {
+    <div class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>₱{{ item.price }}</p>
+      <button (click)="cartService.addToCart(item)">
+        Add to Cart
+      </button>
+    </div>
+  }
+</div>
+
+<h2>Tea & Infusions</h2>
+<div class="shop-grid">
+  @for (item of cartService.teaItems(); track item.id) {
+    <div class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>₱{{ item.price }}</p>
+      <button (click)="cartService.addToCart(item)">
+        Add to Cart
+      </button>
+    </div>
+  }
+</div>
+
+<h2>Main Dishes</h2>
+<div class="shop-grid">
+  @for (item of cartService.mainDishItems(); track item.id) {
+    <div class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>₱{{ item.price }}</p>
+      <button (click)="cartService.addToCart(item)">
+        Add to Cart
+      </button>
+    </div>
+  }
+</div>
+
+<h2>Desserts</h2>
+<div class="shop-grid">
+  @for (item of cartService.dessertItems(); track item.id) {
+    <div class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>₱{{ item.price }}</p>
+      <button (click)="cartService.addToCart(item)">
+        Add to Cart
+      </button>
+    </div>
+  }
+</div>

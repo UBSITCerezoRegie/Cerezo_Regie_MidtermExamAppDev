@@ -1,0 +1,132 @@
+.menu-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .menu-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1565c0;
+  }
+  
+  .shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .item-card {
+    width: 220px;
+    padding: 1.2rem;
+  
+    background: white;
+    border: 2px solid #1976d2;
+    border-radius: 15px;
+  
+    text-align: center;
+  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+    transition: 0.3s ease;
+  }
+  
+  .item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(25, 118, 210, 0.2);
+  }
+  
+  .item-card h3 {
+    color: #1565c0;
+    margin-bottom: 0.8rem;
+  }
+  
+  .item-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .item-card button {
+    width: 100%;
+    padding: 0.7rem;
+  
+    border: none;
+    border-radius: 8px;
+  
+    background: #1976d2;
+    color: white;
+  
+    cursor: pointer;
+    font-weight: bold;
+  
+    transition: 0.3s ease;
+  }
+  
+  .item-card button:hover {
+    background: #0d47a1;
+  }
+  
+  /* Cart Section */
+  
+  .cart-section {
+    margin-top: 2rem;
+  
+    background: #f8f9fa;
+    border-radius: 15px;
+  
+    padding: 1.5rem;
+  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .cart-section h2 {
+    color: #1565c0;
+    margin-bottom: 1rem;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+  
+    padding: 0.8rem 0;
+  
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .total {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  .checkout-btn {
+    margin-top: 1rem;
+  
+    padding: 0.8rem 1.5rem;
+  
+    border: none;
+    border-radius: 10px;
+  
+    background: #2e7d32;
+    color: white;
+  
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  
+    transition: 0.3s ease;
+  }
+  
+  .checkout-btn:hover {
+    background: #1b5e20;
+  }
+
+  .region-banner {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
