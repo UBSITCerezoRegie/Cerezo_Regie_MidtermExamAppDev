@@ -1,79 +1,55 @@
 .navbar {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid #f0f0f0;
-    padding: 1.25rem 2rem;
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-  
-  /* Centered Container */
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Typography Logo */
-  .logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    text-transform: lowercase;
-    color: #2c2c2c;
-  }
-  
-  .logo span {
-    color: #c48a69; /* Soft cafe terracotta accent */
-  }
-  
-  /* Navigation List */
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Individual Links */
-  .nav-links a {
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #6e6e6e;
-    position: relative;
-    padding: 0.5rem 0;
-    transition: color 0.25s ease;
-    text-transform: capitalize;
-  }
-  
-  /* Hover State */
-  .nav-links a:hover {
-    color: #2c2c2c;
-  }
-  
-  /* Angular Active Link Animation */
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #c48a69;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-  
-  .nav-links a.active-link {
-    color: #c48a69;
-    font-weight: 600;
-  }
-  
-  .nav-links a.active-link::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1f1f1f;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2f2f2f;
+
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #8b5e3c;
+}
+
+.nav-links a.active-link {
+  color: #8b5e3c;
+  font-weight: 700;
+}
