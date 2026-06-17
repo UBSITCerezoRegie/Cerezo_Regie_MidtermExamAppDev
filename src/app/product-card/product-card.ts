@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-product-card',
-  imports: [],
+  standalone: true,
   templateUrl: './product-card.html',
-  styleUrl: './product-card.css',
+  styleUrl: './product-card.css'
 })
-export class ProductCard {}
+export class ProductCard {
+
+  product = input<any>();
+
+  add = output<any>();
+
+  addToCart() {
+    this.add.emit(this.product());
+  }
+}

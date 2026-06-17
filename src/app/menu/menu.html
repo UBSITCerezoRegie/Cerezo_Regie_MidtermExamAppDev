@@ -1,79 +1,101 @@
-<h1>Ruins Cafe Menu</h1>
+<h1>Cafe by the Ruins</h1>
+  <h1>Cafe by the Ruins</h1>
 
-<h2>Breakfast</h2>
-<div class="shop-grid">
-  @for (item of cartService.breakfastItems(); track item.id) {
-    <div class="item-card">
-      <h3>{{ item.name }}</h3>
-      <p>₱{{ item.price }}</p>
-      <button (click)="cartService.addToCart(item)">
-        Add to Cart
-      </button>
+  <div class="menu-layout">
+  
+    <!-- LEFT SIDE -->
+    <div class="menu-content">
+      <h2>Breakfast</h2>
+      <div class="shop-grid">
+        @for(item of cartService.breakfastItems(); track item.id){
+          <app-product-card
+            [product]="item"
+            (add)="cartService.addToCart($event)">
+          </app-product-card>
+        }
+      </div>
+      
+      <h2>Coffee</h2>
+      <div class="shop-grid">
+        @for(item of cartService.coffeeItems(); track item.id){
+          <app-product-card
+            [product]="item"
+            (add)="cartService.addToCart($event)">
+          </app-product-card>
+        }
+      </div>
+      
+      <h2>Cold Coffee</h2>
+      <div class="shop-grid">
+        @for(item of cartService.coldCoffeeItems(); track item.id){
+          <app-product-card
+            [product]="item"
+            (add)="cartService.addToCart($event)">
+          </app-product-card>
+        }
+      </div>
+      
+      <h2>Tea & Infusions</h2>
+      <div class="shop-grid">
+        @for(item of cartService.teaItems(); track item.id){
+          <app-product-card
+            [product]="item"
+            (add)="cartService.addToCart($event)">
+          </app-product-card>
+        }
+      </div>
+      
+      <h2>Main Dishes</h2>
+      <div class="shop-grid">
+        @for(item of cartService.mainDishItems(); track item.id){
+          <app-product-card
+            [product]="item"
+            (add)="cartService.addToCart($event)">
+          </app-product-card>
+        }
+      </div>
+      
+      <h2>Desserts</h2>
+      <div class="shop-grid">
+        @for(item of cartService.dessertItems(); track item.id){
+          <app-product-card
+            [product]="item"
+            (add)="cartService.addToCart($event)">
+          </app-product-card>
+        }
+      </div>
     </div>
-  }
-</div>
-
-<h2>Coffee</h2>
-<div class="shop-grid">
-  @for (item of cartService.coffeeItems(); track item.id) {
-    <div class="item-card">
-      <h3>{{ item.name }}</h3>
-      <p>₱{{ item.price }}</p>
-      <button (click)="cartService.addToCart(item)">
-        Add to Cart
+  
+    <!-- RIGHT SIDE -->
+    <div class="cart-sidebar">
+  
+      <h2>🛒 Cart Summary</h2>
+  
+      @for(item of cartService.cartSummary(); track item.name){
+  
+        <div class="cart-row">
+          <span>{{ item.name }}</span>
+          <span>x{{ item.quantity }}</span>
+        </div>
+  
+      } @empty {
+  
+        <p>No items added.</p>
+  
+      }
+  
+      <hr>
+  
+      <div class="total">
+        Total: ₱{{ cartService.totalPrice() }}
+      </div>
+  
+      <button
+        class="checkout-btn"
+        (click)="cartService.clearCart()">
+        Clear Cart
       </button>
+  
     </div>
-  }
-</div>
-
-<h2>Cold Coffee</h2>
-<div class="shop-grid">
-  @for (item of cartService.coldCoffeeItems(); track item.id) {
-    <div class="item-card">
-      <h3>{{ item.name }}</h3>
-      <p>₱{{ item.price }}</p>
-      <button (click)="cartService.addToCart(item)">
-        Add to Cart
-      </button>
-    </div>
-  }
-</div>
-
-<h2>Tea & Infusions</h2>
-<div class="shop-grid">
-  @for (item of cartService.teaItems(); track item.id) {
-    <div class="item-card">
-      <h3>{{ item.name }}</h3>
-      <p>₱{{ item.price }}</p>
-      <button (click)="cartService.addToCart(item)">
-        Add to Cart
-      </button>
-    </div>
-  }
-</div>
-
-<h2>Main Dishes</h2>
-<div class="shop-grid">
-  @for (item of cartService.mainDishItems(); track item.id) {
-    <div class="item-card">
-      <h3>{{ item.name }}</h3>
-      <p>₱{{ item.price }}</p>
-      <button (click)="cartService.addToCart(item)">
-        Add to Cart
-      </button>
-    </div>
-  }
-</div>
-
-<h2>Desserts</h2>
-<div class="shop-grid">
-  @for (item of cartService.dessertItems(); track item.id) {
-    <div class="item-card">
-      <h3>{{ item.name }}</h3>
-      <p>₱{{ item.price }}</p>
-      <button (click)="cartService.addToCart(item)">
-        Add to Cart
-      </button>
-    </div>
-  }
-</div>
+  
+  </div>
