@@ -26,3 +26,32 @@
     width: calc(100% - 30px);
     margin: 15px;
   }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: calc(100% - 30px);
+    margin: 14px 15px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 50px;
+    background: #6b3e1a;
+    color: #fdf0e0;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 3px 10px rgba(107, 62, 26, 0.28);
+  }
+  
+  button:hover {
+    background: #4e2a0e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(107, 62, 26, 0.38);
+  }
+  
+  button:active {
+    transform: scale(0.97);
+  }
