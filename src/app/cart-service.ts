@@ -45,42 +45,24 @@ export class cartService {
   ]);
   
 
-  private cardItems = signal<any[]>([]);
-  
-  cart = this.cardItems.asReadonly();
+  private cartItems = signal<any[]>([]);
 
-  totalPrice = computed (() => 
-  this.cardItems().reduce(
-    (sum,item) => sum + item.price, 0 
-  )
+  cart = this.cartItems.asReadonly();
+
+  totalPrice = computed(() =>
+    this.cartItems().reduce(
+      (sum, item) => sum + item.price,
+      0
+    )
   );
 
-  addToCart(item: any){
-    this.cardItems.update (
-      current => [...current,item]
+  addToCart(item: any) {
+    this.cartItems.update(
+      current => [...current, item]
     );
   }
-  clearCart(){
-    this.cardItems.set([]);
+
+  clearCart() {
+    this.cartItems.set([]);
   }
-  cartSummary = computed(() => {
-    const grouped: any[] = [];
-  
-    this.cart().forEach(item => {
-      const existing = grouped.find(
-        p => p.name === item.name
-      );
-  
-      if (existing) {
-        existing.quantity++;
-      } else {
-        grouped.push({
-          name: item.name,
-          quantity: 1
-        });
-      }
-    });
-  
-    return grouped;
-  });
 }

@@ -2,7 +2,6 @@
 
   <div class="menu-layout">
   
-    <!-- LEFT SIDE -->
     <div class="menu-content">
       <h2>Breakfast</h2>
       <div class="shop-grid">
@@ -65,36 +64,20 @@
       </div>
     </div>
   
-    <!-- RIGHT SIDE -->
-    <div class="cart-sidebar">
-  
-      <h2>🛒 Cart Summary</h2>
-  
-      @for(item of cartService.cartSummary(); track item.name){
-  
-        <div class="cart-row">
-          <span>{{ item.name }}</span>
-          <span>x{{ item.quantity }}</span>
+
+    
+      <div class="cart-sidebar">
+    
+        <h2>🛒 Cart Summary</h2>
+    
+        <div class="cart-preview">
+          <h3>{{ cartService.cart().length }} Items</h3>
+          <a routerLink="/cart" routerLinkActive="active-link" class="view-cart-btn">Cart</a>
         </div>
-  
-      } @empty {
-  
-        <p>No items added.</p>
-  
-      }
-  
-      <hr>
-  
-      <div class="total">
-        Total: ₱{{ cartService.totalPrice() }}
-      </div>
-  
-      <button
-        class="checkout-btn"
-        (click)="cartService.clearCart()">
-        Clear Cart
-      </button>
-  
-    </div>
-  
-  </div>
+    
+        <hr>
+    
+        <div class="total">
+          Total: ₱{{ cartService.totalPrice() }}
+        </div>
+ 
